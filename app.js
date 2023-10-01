@@ -3,10 +3,6 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const routes = require('./routes');
-// const { productRoute } = require('./routes/productRoutes')
-// const { formRoute } = require('./routes/formRoutes')
-// const { aboutRoute } = require('./routes/aboutRoutes')
-// const { pool } = require('./config/databases')
 
 
 const PORT = process.env.PORT || 3000;
@@ -22,13 +18,6 @@ app.use((req, res, next) => {
     next();
   });
 
-
-// //rute
-// app.use("/", productRoute)
-// // rute untuk form
-// app.use("/form", formRoute )
-// // rute untuk about
-// app.use("/about", aboutRoute)
 
 
 
