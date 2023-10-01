@@ -10,7 +10,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model Product {
   id          Int      @id @default(autoincrement())
   name        String
@@ -20,13 +19,12 @@ model Product {
   rating      Float
   description String
   productType String @default("")
-  sizes       Json    
-  reviews     Json   
+  sizes       String   // Menggunakan tipe data String untuk menyimpan ukuran
+  reviews     String   @db.VarChar(4000) // Menggunakan tipe data String dengan batasan panjang
   actions     Json
 
   @@map("product") // Menentukan nama tabel dalam database
 }
-
 
 
 model Team {
