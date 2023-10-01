@@ -15,11 +15,28 @@ model Product {
   id          Int      @id @default(autoincrement())
   name        String
   brand       String
-  type        String
-  price       Int
-  image       String
-  rating      Int
+  price       Float
+  imageSrc    String
+  rating      Float
   description String
-  reviews     String
-  size        String
+  productType String @default("")
+  sizes       Json    
+  reviews     Json   
+  actions     Json
+
+  @@map("product") // Menentukan nama tabel dalam database
 }
+
+
+
+model Team {
+  id        Int      @id @default(autoincrement())
+  name      String
+  role      String
+  instagram String
+  linkedin  String
+  github    String
+  image     String
+  @@map("team") // Menentukan nama tabel dalam database
+}
+

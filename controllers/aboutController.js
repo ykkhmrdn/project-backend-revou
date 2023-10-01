@@ -1,12 +1,11 @@
-const aboutService = require('../services/aboutService')
+const { aboutService } = require('../services');
 
-//Get
-const getAllAbout = async (req, res) =>{
-    const about = await aboutService.getAllAbout()
-    res.status(200).json({
-        message: "Sukses Mengambil data about",
-        data: about
-    })
-}
+async function getTeam(req, res) {
+  const about = await aboutService.getAllTeam();
 
-module.exports = { getAllAbout }
+   res.status(200).json(about);
+ }
+
+ module.exports = {
+   getTeam
+ };

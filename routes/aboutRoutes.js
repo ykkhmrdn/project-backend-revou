@@ -1,12 +1,8 @@
 const express = require('express')
-const aboutRoute = express.Router();
-const aboutController = require('../controllers/aboutController')
-
-// const { pool } = require('../config/databases')
+const { aboutController } = require('../controllers');
+const router = express.Router();
 
 
-aboutRoute.get('/', aboutController.getAllAbout)
-// formRoute.post('/', formController.createForm)
-// productRoute.post('/products', productController.createProducts)
+router.get('/about', aboutController.getTeam);
 
-module.exports = { aboutRoute }
+module.exports = router;

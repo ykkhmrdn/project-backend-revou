@@ -1,10 +1,15 @@
-const { pool } = require('../config/databases')
+const { prisma } = require('../config/prisma')
+async function getAllTeam() {
+    try{
+        const about = await prisma.team.findMany();
 
-//Get
-const getAllAbout = async () => {
-    const connection = await pool.getConnection()
-    const [about] = await connection.query('SELECT * FROM team_members')
-    return about
+        return about;
+    }catch (error) {
+        console.error(error);
+        throw new Error()
+    }
 }
 
-module.exports = { getAllAbout }
+module.exports = {
+    getAllTeam
+}

@@ -19,8 +19,6 @@ app.use((req, res, next) => {
   });
 
 
-
-
 routes.forEach((route) => app.use(route));
 
 app.listen(PORT, () => {
